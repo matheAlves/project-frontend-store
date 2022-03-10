@@ -12,27 +12,27 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchText: '',
+      search: '',
       listProduct: [],
       loading: true,
     };
 
-    this.handlechangeSearch = this.handlechangeSearch.bind(this);
+    this.handlechangeSearch = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   async handleClick() {
-    const { searchText } = this.state;
-    const selectedCategorieRequest = await Api
-      .getProductsFromCategoryAndQuery('', searchText);
+    const { search } = this.state;
+    const resultSearch = await Api
+      .getProductsFromCategoryAndQuery('', search);
     this.setState({
-      listProduct: selectedCategorieRequest,
+      listProduct: resultSearch,
       loading: false,
     });
   }
 
-  handlechangeSearch({ target }) {
-    this.setState({ searchText: target.value });
+  handleChange({ target }) {
+    this.setState({ search: target.value }); // target é o que causa o evento do change.
   }
 
   render() {
@@ -47,7 +47,7 @@ class Home extends React.Component {
           type="text"
           id="input-search"
           placeholder="Pesquisar"
-          onChange={ this.handlechangeSearch }
+          onChange={ this.handleChange }
         />
         <button
           type="button"
@@ -63,7 +63,7 @@ class Home extends React.Component {
           <Categories />
         </div>
         {loading ? <p>teste</p> : <ProductList products={ listProduct } /> }
-      </div>
+      </div> // passa o valor do listProduct ao products e joga no ProductList
     );
   }
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Product extends React.Component {
   render() {
-    const { product: { title, thumbnail, price } } = this.props;
+    const { product: { title, thumbnail, price } } = this.props; // vem das propriedades de product passada pelo .map do ProductList.
     return (
       <div data-testid="product">
         <img src={ thumbnail } alt={ title } />
