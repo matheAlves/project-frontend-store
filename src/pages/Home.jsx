@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Image from '../images/shoppingcart.jpg';
+import Categories from './Categories';
 
 class Home extends React.Component {
   render() {
@@ -19,6 +20,10 @@ class Home extends React.Component {
         <Link data-testid="shopping-cart-button" to="/cart">
           <img src={ Image } alt="carrinho de compras" />
         </Link>
+
+        <div>
+          <Categories />
+        </div>
       </div>
     );
   }
