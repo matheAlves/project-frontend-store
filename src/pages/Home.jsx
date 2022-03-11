@@ -17,14 +17,14 @@ class Home extends React.Component {
       loading: true,
     };
 
-    this.handlechangeSearch = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   async handleClick() {
     const { search } = this.state;
     const resultSearch = await Api
-      .getProductsFromCategoryAndQuery('', search);
+      .getProductsFromCategoryAndQuery('', search); // passa para a função apenas o query que está depois da url, mas nn o id.
     this.setState({
       listProduct: resultSearch,
       loading: false,
