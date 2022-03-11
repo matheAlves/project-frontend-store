@@ -15,24 +15,34 @@ class Home extends React.Component {
       search: '',
       listProduct: [],
       loading: true,
+      category: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
+  handleChange({ target }) {
+    if (target.type === 'radio') {
+      this.setState({
+        category: target.id,
+      }, () => this.handleClick());
+    } else if (target.type === 'text') {
+      this.setState({
+        search: target.value,
+      });
+    }
+  }
+
+  // requisito 6 - função modificada para receber o parametro da categoria também. Também é chamada ao selecionar uma categoria
   async handleClick() {
-    const { search } = this.state;
+    const { search, category } = this.state;
     const resultSearch = await Api
-      .getProductsFromCategoryAndQuery('', search); // passa para a função apenas o query que está depois da url, mas nn o id.
+      .getProductsFromCategoryAndQuery(category, search);
     this.setState({
       listProduct: resultSearch,
       loading: false,
     });
-  }
-
-  handleChange({ target }) {
-    this.setState({ search: target.value }); // target é o que causa o evento do change.
   }
 
   render() {
@@ -46,6 +56,7 @@ class Home extends React.Component {
           data-testid="query-input"
           type="text"
           id="input-search"
+          name="search"
           placeholder="Pesquisar"
           onChange={ this.handleChange }
         />
@@ -60,7 +71,7 @@ class Home extends React.Component {
           <img src={ Image } alt="carrinho de compras" />
         </Link>
         <div>
-          <Categories />
+          <Categories handleChange={ this.handleChange } />
         </div>
         {loading ? <p>teste</p> : <ProductList products={ listProduct } /> }
       </div> // passa o valor do listProduct ao products e joga no ProductList
