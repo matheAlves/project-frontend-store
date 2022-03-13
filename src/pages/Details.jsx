@@ -37,6 +37,7 @@ class Details extends React.Component {
             <p>{ `R$ ${product.price}` }</p>
             <p>{ product.warranty }</p>
             <p>{ `Status do produto: ${product.status}` }</p>
+            <button type="submit"> Adicionar no carrinho </button>
           </div>
         ) }
       </div>
