@@ -13,6 +13,7 @@ class Home extends React.Component {
       loading,
       handleChange,
       handleClick,
+      addToCart,
     } = this.props;
     return (
       <div>
@@ -40,7 +41,9 @@ class Home extends React.Component {
         <div>
           <Categories handleChange={ handleChange } />
         </div>
-        {loading ? <p>teste</p> : <ProductList products={ listProduct } /> }
+        { loading
+          ? <p>teste</p>
+          : <ProductList products={ listProduct } addToCart={ addToCart } />}
       </div> // passa o valor do listProduct ao products e joga no ProductList
     );
   }
@@ -57,6 +60,7 @@ Home.propTypes = {
   loading: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Home;

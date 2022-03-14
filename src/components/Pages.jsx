@@ -65,6 +65,7 @@ class Pages extends React.Component {
             loading={ loading }
             handleChange={ this.handleChange }
             handleClick={ this.handleClick }
+            addToCart={ this.addToCart }
           />
         </Route>
 
