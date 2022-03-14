@@ -7,7 +7,6 @@ import ProductRating from '../components/ProductRating';
 
 import Image from '../images/shoppingcart.jpg';
 
-
 class Details extends React.Component {
   constructor() {
     super();
