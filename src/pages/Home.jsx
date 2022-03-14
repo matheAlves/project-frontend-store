@@ -34,7 +34,7 @@ class Home extends React.Component {
     }
   }
 
-  // requisito 6 - função modificada para receber o parametro da categoria também. Também é chamada ao selecionar uma categoria
+  // requisito 6 - função modificada para receber o parametro da categoria também. Também é chamada ao selecionar uma categoria (através de handleChange)
   async handleClick() {
     const { search, category } = this.state;
     const resultSearch = await Api

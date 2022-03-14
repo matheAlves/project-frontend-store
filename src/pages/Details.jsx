@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getProductDetails } from '../services/api';
+import ProductRating from '../components/ProductRating';
 
 class Details extends React.Component {
   constructor() {
@@ -40,6 +41,7 @@ class Details extends React.Component {
             <button type="submit"> Adicionar no carrinho </button>
           </div>
         ) }
+        <ProductRating />
       </div>
     );
   }
