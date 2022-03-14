@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getProductDetails } from '../services/api';
+import Image from '../images/shoppingcart.jpg';
 
 class Details extends React.Component {
   constructor() {
@@ -42,7 +43,7 @@ class Details extends React.Component {
             <p>{ `Status do produto: ${product.status}` }</p>
             <button
               type="button"
-              onClick={ addToCart }
+              onClick={ () => addToCart(product.thumbnail, product.title, product.price) }
               data-testid="product-detail-add-to-cart"
             >
               Adicionar no carrinho
@@ -50,6 +51,9 @@ class Details extends React.Component {
           </div>
         ) }
         <Link to="/">Voltar</Link>
+        <Link to="/cart" data-testid="shopping-cart-button">
+          <img src={ Image } alt="carrinho de compras" />
+        </Link>
       </div>
     );
   }

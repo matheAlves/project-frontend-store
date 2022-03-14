@@ -34,7 +34,7 @@ class Home extends React.Component {
         >
           Buscar
         </button>
-        <Link data-testid="shopping-cart-button" to="/cart">
+        <Link to="/cart" data-testid="shopping-cart-button">
           <img src={ Image } alt="carrinho de compras" />
         </Link>
         <div>

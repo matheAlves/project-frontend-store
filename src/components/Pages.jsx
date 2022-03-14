@@ -15,7 +15,7 @@ class Pages extends React.Component {
       listProduct: {},
       loading: true,
       category: '',
-      cartList: [],
+      cartItems: [],
     };
   }
 
@@ -43,18 +43,17 @@ class Pages extends React.Component {
   }
 
   addToCart = (thumbnail, title, price) => {
-    const { cartList } = this.state;
+    const { cartItems } = this.state;
     this.setState({
-      cartList: [...cartList, { thumbnail, title, price }],
+      cartItems: [...cartItems, { thumbnail, title, price }],
     });
   }
 
   render() {
     const {
-      search,
       listProduct,
       loading,
-      cartList,
+      cartItems,
     } = this.state;
 
     return (
@@ -71,7 +70,7 @@ class Pages extends React.Component {
 
         <Route exact path="/cart">
           <ShoppingCart
-            search={ search }
+            cartItems={ cartItems }
           />
         </Route>
 
@@ -79,7 +78,7 @@ class Pages extends React.Component {
           exact
           path="/:id"
           render={
-            (props) => <Details { ...props } cartList={ cartList } addToCart={ this.addToCart } />
+            (props) => <Details { ...props } cartItems={ cartItems } addToCart={ this.addToCart } />
           }
         />
 
