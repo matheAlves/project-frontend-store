@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getProductDetails } from '../services/api';
 
 class Details extends React.Component {
@@ -28,6 +29,8 @@ class Details extends React.Component {
 
   render() {
     const { product, loading } = this.state;
+    const { addToCart } = this.props;
+
     return (
       <div>
         { loading ? 'Carregando...' : (
@@ -37,9 +40,16 @@ class Details extends React.Component {
             <p>{ `R$ ${product.price}` }</p>
             <p>{ product.warranty }</p>
             <p>{ `Status do produto: ${product.status}` }</p>
-            <button type="submit"> Adicionar no carrinho </button>
+            <button
+              type="button"
+              onClick={ addToCart }
+              data-testid="product-detail-add-to-cart"
+            >
+              Adicionar no carrinho
+            </button>
           </div>
         ) }
+        <Link to="/">Voltar</Link>
       </div>
     );
   }
@@ -51,6 +61,7 @@ Details.propTypes = {
       id: PropTypes.string,
     }),
   }).isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Details;
