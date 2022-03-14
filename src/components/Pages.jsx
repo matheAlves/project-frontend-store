@@ -77,9 +77,9 @@ class Pages extends React.Component {
         <Route
           exact
           path="/:id"
-          render={
-            (props) => <Details { ...props } cartItems={ cartItems } addToCart={ this.addToCart } />
-          }
+          render={ (props) => (
+            <Details { ...props } cartItems={ cartItems } addToCart={ this.addToCart } />
+          ) }
         />
 
       </Switch>
