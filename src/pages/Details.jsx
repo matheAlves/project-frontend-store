@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getProductDetails } from '../services/api';
+
+import ProductRating from '../components/ProductRating';
+
 import Image from '../images/shoppingcart.jpg';
 
 class Details extends React.Component {
@@ -50,10 +53,14 @@ class Details extends React.Component {
             </button>
           </div>
         ) }
+
+        <ProductRating />
+
         <Link to="/">Voltar</Link>
         <Link to="/cart" data-testid="shopping-cart-button">
           <img src={ Image } alt="carrinho de compras" />
         </Link>
+
       </div>
     );
   }

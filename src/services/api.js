@@ -1,3 +1,7 @@
+if (!JSON.parse(localStorage.getItem('ratings'))) {
+  localStorage.setItem('ratings', JSON.stringify([]));
+}
+
 export async function getCategories() {
   try {
     const fetchAPI = await fetch('https://api.mercadolibre.com/sites/MLB/categories');
