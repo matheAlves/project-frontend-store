@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getProductDetails } from '../services/api';
+
 import ProductRating from '../components/ProductRating';
+
+import Image from '../images/shoppingcart.jpg';
+
 
 class Details extends React.Component {
   constructor() {
@@ -29,6 +34,8 @@ class Details extends React.Component {
 
   render() {
     const { product, loading } = this.state;
+    const { addToCart } = this.props;
+
     return (
       <div>
         { loading ? 'Carregando...' : (
@@ -38,10 +45,23 @@ class Details extends React.Component {
             <p>{ `R$ ${product.price}` }</p>
             <p>{ product.warranty }</p>
             <p>{ `Status do produto: ${product.status}` }</p>
-            <button type="submit"> Adicionar no carrinho </button>
+            <button
+              type="button"
+              onClick={ () => addToCart(product.thumbnail, product.title, product.price) }
+              data-testid="product-detail-add-to-cart"
+            >
+              Adicionar no carrinho
+            </button>
           </div>
         ) }
+
         <ProductRating />
+
+        <Link to="/">Voltar</Link>
+        <Link to="/cart" data-testid="shopping-cart-button">
+          <img src={ Image } alt="carrinho de compras" />
+        </Link>
+
       </div>
     );
   }
@@ -53,6 +73,7 @@ Details.propTypes = {
       id: PropTypes.string,
     }),
   }).isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Details;
