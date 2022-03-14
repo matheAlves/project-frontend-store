@@ -6,17 +6,14 @@ class PrevList extends Component {
 
     return (
       <div>
-        {prevRatings.map((rating, index) => {
-          return (
-            <div
-              key={ index }
-            >
-              <h2>{rating.email}</h2>
-              <h2>{rating.rating}</h2>
-              <p>{rating.review}</p>
-            </div>
-          );
-        })}
+        <h1>Avaliações:</h1>
+        {prevRatings.map((rating, index) => (
+          <div key={ index }>
+            <h2>{rating.email}</h2>
+            <h2>{rating.rating}</h2>
+            <p>{rating.review}</p>
+          </div>
+        ))}
       </div>
     );
   }
