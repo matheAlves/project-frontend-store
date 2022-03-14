@@ -27,7 +27,11 @@ class ShoppingCart extends React.Component {
 }
 
 ShoppingCart.propTypes = {
-  cartItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  cartItems: PropTypes.arrayOf(PropTypes.shape({
+    thumbnail: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+  })).isRequired,
 };
 
 export default ShoppingCart;

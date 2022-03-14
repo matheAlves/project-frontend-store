@@ -47,7 +47,13 @@ class Home extends React.Component {
 }
 
 Home.propTypes = {
-  listProduct: PropTypes.objectOf(PropTypes.any).isRequired,
+  listProduct: PropTypes.shape({
+    results: PropTypes.arrayOf(PropTypes.shape({
+      price: PropTypes.number,
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+    })),
+  }).isRequired,
   loading: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
