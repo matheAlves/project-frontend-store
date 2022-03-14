@@ -37,6 +37,7 @@ class Details extends React.Component {
 
     return (
       <div>
+        {console.log(this.props)}
         { loading ? 'Carregando...' : (
           <div>
             <img src={ product.thumbnail } alt={ product.title } />

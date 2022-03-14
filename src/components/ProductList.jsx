@@ -4,11 +4,17 @@ import Product from './Product';
 
 class ProductList extends Component {
   render() {
-    const { products } = this.props; // vem das props passadas na página home.
+    const { products, addToCart } = this.props; // vem das props passadas na página home.
     const { results } = products;
     return (
       <div>
-        { results.map((product) => <Product key={ product.id } product={ product } />) }
+        {
+          results.map((product) => (<Product
+            key={ product.id }
+            product={ product }
+            addToCart={ addToCart }
+          />))
+        }
       </div> // cria um novo array a partir dos products e passa como valor ao component Product.
     );
   }
@@ -21,5 +27,6 @@ ProductList.propTypes = {
       title: PropTypes.string,
     })),
   }).isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 export default ProductList;
