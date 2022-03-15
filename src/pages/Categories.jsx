@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getCategories } from '../services/api';
+import './Categories.css';
 
 class Categories extends React.Component {
   constructor() {
@@ -29,21 +30,32 @@ class Categories extends React.Component {
     return (
       <div className="categories">
 
-        {listCategories.map((categories) => (
-          <label key={ categories.id } htmlFor={ categories.id }>
-            { categories.name }
+        <h2 className="titleCategories">
+          Categorias
+        </h2>
 
-            <input
-              data-testid="category"
-              type="radio"
-              name="category"
-              id={ categories.id }
-              onClick={ handleChange }
-            />
+        <div className="divLabels">
+          {listCategories.map((categories) => (
+            <label
+              className="labelCategories"
+              key={ categories.id }
+              htmlFor={ categories.id }
+            >
+              <input
+                className="inputCategories"
+                data-testid="category"
+                type="radio"
+                name="category"
+                id={ categories.id }
+                onClick={ handleChange }
+              />
 
-          </label>
+              { categories.name }
 
-        ))}
+            </label>
+
+          ))}
+        </div>
 
       </div>
     );
