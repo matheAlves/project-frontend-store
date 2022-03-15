@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Image from '../images/shoppingcart.jpg';
+import Header from '../components/Header';
 import Categories from './Categories';
 import ProductList from '../components/ProductList';
 
@@ -17,6 +16,7 @@ class Home extends React.Component {
     } = this.props;
     return (
       <div>
+        <Header />
         <h2 data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
         </h2>
@@ -35,9 +35,6 @@ class Home extends React.Component {
         >
           Buscar
         </button>
-        <Link to="/cart" data-testid="shopping-cart-button">
-          <img src={ Image } alt="carrinho de compras" />
-        </Link>
         <div>
           <Categories handleChange={ handleChange } />
         </div>

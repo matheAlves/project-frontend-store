@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getProductDetails } from '../services/api';
 
 import ProductRating from '../components/ProductRating';
+import Header from '../components/Header';
 
 import Image from '../images/shoppingcart.jpg';
 
@@ -37,6 +38,7 @@ class Details extends React.Component {
 
     return (
       <div>
+        <Header />
         {console.log(this.props)}
         { loading ? 'Carregando...' : (
           <div>
