@@ -1,0 +1,37 @@
+.productList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.product {
+  align-items: center;
+  border: 5px solid #46d9d2;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  margin: 5px;
+  max-width: 200px;
+  padding: 5px;
+}
+
+.productImg {
+  width: 100px;
+}
+
+.moreAdd {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 190px;
+}
+
+.moreAdd img {
+  border-radius: 10px;
+  width: 25px;
+}
+
+.moreAdd button {
+  border-radius: 15px;
+}

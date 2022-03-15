@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
+import './ProductList.css';
 
 class ProductList extends Component {
   render() {
     const { products, addToCart } = this.props; // vem das props passadas na página home.
     const { results } = products;
     return (
-      <div>
+      <div className="productList">
         {
           results.map((product) => (<Product
             key={ product.id }
