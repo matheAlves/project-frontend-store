@@ -1,0 +1,22 @@
+.header {
+  background-image: url('../images/front.gif');
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  color: rgb(70, 132, 247);
+  text-align: center;
+}
+
+.image-cart {
+  height: 5%;
+  margin-left: 85%;
+  width: 5%;
+}
+
+.voltar {
+  height: 4%;
+  margin-left: 2%;
+  width: 4%;
+}

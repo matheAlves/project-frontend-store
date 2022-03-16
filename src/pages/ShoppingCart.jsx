@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import Header from '../components/Header';
 
 class ShoppingCart extends React.Component {
   render() {
@@ -8,6 +9,7 @@ class ShoppingCart extends React.Component {
 
     return (
       <div>
+        <Header />
         { cartItems.length === 0
           ? <h3 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h3>
           : (
@@ -20,7 +22,6 @@ class ShoppingCart extends React.Component {
               </div>
             ))
           ) }
-        <Link to="/">Voltar</Link>
       </div>
     );
   }
