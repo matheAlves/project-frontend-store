@@ -60,7 +60,7 @@ class Details extends React.Component {
         <ProductRating />
 
         <Link to="/">Voltar</Link>
-        <Link to="/cart" data-testid="shopping-cart-button">
+        <Link to="/cart">
           <img src={ Image } alt="carrinho de compras" />
         </Link>
 
