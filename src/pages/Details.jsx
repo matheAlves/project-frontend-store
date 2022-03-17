@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { getProductDetails } from '../services/api';
 import ProductRating from '../components/ProductRating';
 import Header from '../components/Header';
 import './Details.css';
-import Image from '../images/cart.png';
 
 class Details extends React.Component {
   constructor() {
@@ -45,12 +43,13 @@ class Details extends React.Component {
             </div>
 
             <div className="product-details">
-              <p data-testid="product-detail-name">{product.title}</p>
+              <h1 data-testid="product-detail-name">{product.title}</h1>
               <p>{`R$ ${product.price}`}</p>
               <p>{product.warranty}</p>
-              <p>{`Status do produto: ${product.status}`}</p>
+              <p>{`${product.sold_quantity} vendidos`}</p>
 
               <button
+                className="button-details"
                 type="button"
                 onClick={() => addToCart(product.thumbnail, product.title, product.price)}
                 data-testid="product-detail-add-to-cart">
@@ -62,7 +61,6 @@ class Details extends React.Component {
 
         <ProductRating />
 
-        <Link to="/">Voltar</Link>
       </div>
     );
   }

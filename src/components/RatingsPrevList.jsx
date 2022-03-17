@@ -6,9 +6,11 @@ class PrevList extends Component {
 
     return (
       <div>
-        <h1>Avaliações:</h1>
+        <h1>Todas as avaliações:</h1>
         {prevRatings.map((rating, index) => (
-          <div key={ index }>
+          <div
+            className="review-card"
+            key={ index }>
             <h2>{rating.email}</h2>
             <h2>{rating.rating}</h2>
             <p>{rating.review}</p>
