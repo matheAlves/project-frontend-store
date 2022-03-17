@@ -8,9 +8,6 @@ import './Details.css';
 
 import Footer from '../components/Footer';
 
-import Image from '../images/shoppingcart.jpg';
-
-
 class Details extends React.Component {
   constructor() {
     super();
@@ -66,9 +63,9 @@ class Details extends React.Component {
               >
                 Adicionar no carrinho
               </button>
-              
+
             </div>
-            
+
           </div>
         )}
 
