@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class ShoppingCart extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class ShoppingCart extends React.Component {
               </div>
             ))
           ) }
+        <Footer />
       </div>
     );
   }
