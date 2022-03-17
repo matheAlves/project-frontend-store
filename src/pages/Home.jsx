@@ -5,6 +5,7 @@ import './Home.css';
 import Header from '../components/Header';
 import Categories from './Categories';
 import ProductList from '../components/ProductList';
+import Footer from '../components/Footer';
 
 class Home extends React.Component {
   render() {
@@ -25,6 +26,9 @@ class Home extends React.Component {
             ? <p> </p>
             : <ProductList products={ listProduct } addToCart={ addToCart } />}
         </div>
+
+        <Footer />
+
       </div> // passa o valor do listProduct ao products e joga no ProductList
     );
   }
