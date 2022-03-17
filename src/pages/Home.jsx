@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Home.css';
 
 import Header from '../components/Header';
 import Categories from './Categories';
@@ -16,31 +17,14 @@ class Home extends React.Component {
     } = this.props;
     return (
       <div>
-        <Header />
-        <h2 data-testid="home-initial-message">
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </h2>
-        <input
-          data-testid="query-input"
-          type="text"
-          id="input-search"
-          name="search"
-          placeholder="Pesquisar"
-          onChange={ handleChange }
-        />
-        <button
-          type="button"
-          data-testid="query-button"
-          onClick={ handleClick }
-        >
-          Buscar
-        </button>
-        <div>
+        <Header handleClick={ handleClick } handleChange={ handleChange } />
+
+        <div className="mainPage">
           <Categories handleChange={ handleChange } />
+          { loading
+            ? <p> </p>
+            : <ProductList products={ listProduct } addToCart={ addToCart } />}
         </div>
-        { loading
-          ? <p>teste</p>
-          : <ProductList products={ listProduct } addToCart={ addToCart } />}
       </div> // passa o valor do listProduct ao products e joga no ProductList
     );
   }
