@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getProductDetails } from '../services/api';
-
 import ProductRating from '../components/ProductRating';
 import Header from '../components/Header';
-
-import Image from '../images/shoppingcart.jpg';
+import './Details.css';
+import Image from '../images/cart.png';
 
 class Details extends React.Component {
   constructor() {
@@ -39,31 +38,31 @@ class Details extends React.Component {
     return (
       <div>
         <Header />
-        {console.log(this.props)}
-        { loading ? 'Carregando...' : (
-          <div>
-            <img src={ product.thumbnail } alt={ product.title } />
-            <p data-testid="product-detail-name">{ product.title }</p>
-            <p>{ `R$ ${product.price}` }</p>
-            <p>{ product.warranty }</p>
-            <p>{ `Status do produto: ${product.status}` }</p>
-            <button
-              type="button"
-              onClick={ () => addToCart(product.thumbnail, product.title, product.price) }
-              data-testid="product-detail-add-to-cart"
-            >
-              Adicionar no carrinho
-            </button>
+        {loading ? 'Carregando...' : (
+          <div className="flex">
+            <div className="product-image">
+              <img src={product.thumbnail} alt={product.title} />
+            </div>
+
+            <div className="product-details">
+              <p data-testid="product-detail-name">{product.title}</p>
+              <p>{`R$ ${product.price}`}</p>
+              <p>{product.warranty}</p>
+              <p>{`Status do produto: ${product.status}`}</p>
+
+              <button
+                type="button"
+                onClick={() => addToCart(product.thumbnail, product.title, product.price)}
+                data-testid="product-detail-add-to-cart">
+                Adicionar no carrinho
+              </button>
+            </div>
           </div>
-        ) }
+        )}
 
         <ProductRating />
 
         <Link to="/">Voltar</Link>
-        <Link to="/cart">
-          <img src={ Image } alt="carrinho de compras" />
-        </Link>
-
       </div>
     );
   }
