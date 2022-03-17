@@ -74,12 +74,6 @@ class Details extends React.Component {
 
         <ProductRating />
 
-        <Link to="/">Voltar</Link>
-
-        <Link to="/cart">
-          <img src={ Image } alt="carrinho de compras" />
-        </Link>
-
         <Footer />
 
       </div>
