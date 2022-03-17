@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Categories from './Categories';
 import ProductList from '../components/ProductList';
+import Footer from '../components/Footer';
 
 class Home extends React.Component {
   render() {
@@ -41,6 +42,7 @@ class Home extends React.Component {
         { loading
           ? <p>teste</p>
           : <ProductList products={ listProduct } addToCart={ addToCart } />}
+        <Footer />
       </div> // passa o valor do listProduct ao products e joga no ProductList
     );
   }

@@ -5,6 +5,7 @@ import { getProductDetails } from '../services/api';
 
 import ProductRating from '../components/ProductRating';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import Image from '../images/shoppingcart.jpg';
 
@@ -63,7 +64,7 @@ class Details extends React.Component {
         <Link to="/cart">
           <img src={ Image } alt="carrinho de compras" />
         </Link>
-
+        <Footer />
       </div>
     );
   }
