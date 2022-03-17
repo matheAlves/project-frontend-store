@@ -1,22 +1,115 @@
 .header {
+  align-items: center;
   background-image: url('../images/front.gif');
+  background-position-x: right;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .titulo {
+  align-self: center;
   color: rgb(70, 132, 247);
+  margin: 5px 0;
+  padding: 0;
   text-align: center;
 }
 
 .image-cart {
-  height: 5%;
-  margin-left: 85%;
-  width: 5%;
+  height: 100%;
+  width: 100%;
 }
 
 .voltar {
-  height: 4%;
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputSearch {
+  align-self: center;
+  display: inline-block;
+}
+
+.input {
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  margin: 0 5px;
+  outline: none;
+  text-align: center;
+  width: 300px;
+}
+
+.input::placeholder {
+  color: rgb(70, 132, 247);
+}
+
+.button {
+  background-color: rgb(70, 132, 247);
+  border: none;
+  border-radius: 5px;
+  color: #5fefcd;
+  font-size: large;
+  font-weight: 600;
+  height: 30px;
+  transition: all 0.9s;
+  width: 80px;
+}
+
+.button:hover {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px #0000ff61;
+  color: rgb(70, 132, 247);
+  font-weight: 600;
+  transition: all 0.9s;
+}
+
+.button:before {
+  opacity: 1;
+  transition: 0.1s;
+}
+
+.button:after {
+  opacity: 1;
+  transition: 0.1s;
+}
+
+.button:active {
+  background-color: rgb(70, 132, 247);
+  border: none;
+  border-radius: 5px;
+  color: #5fefcd;
+  font-size: large;
+  font-weight: 600;
+  height: 30px;
+  transition: 0.2s;
+  width: 80px;
+}
+
+.center h2 {
+  align-self: center;
+  color: #5fefcd;
+  font-size: xx-small;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+.linkvoltar {
+  height: 60px;
   margin-left: 2%;
-  width: 4%;
+  width: 60px;
+}
+
+.linkCart {
+  height: 60px;
+  margin-right: 2%;
+  width: 60px;
 }

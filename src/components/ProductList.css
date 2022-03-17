@@ -1,7 +1,8 @@
 .productList {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  height: auto;
+  justify-content: center;
 }
 
 .product {
@@ -11,7 +12,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  margin: 5px;
+  margin: 50px 10px 0;
   max-width: 200px;
   padding: 5px;
 }

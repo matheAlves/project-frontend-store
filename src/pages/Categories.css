@@ -1,8 +1,10 @@
 .categories {
   align-items: center;
-  background: linear-gradient(180deg, #4ee2d5 0%, #1ec6c6 100%);
+  background: linear-gradient(180deg, #5fefcd 0%, #1ec6c6 100%);
   display: flex;
   flex-direction: column;
+  height: auto;
+  margin-right: 15px;
   padding: 25px;
   text-align: justify;
   width: 350px;
@@ -11,6 +13,7 @@
 .divLabels {
   display: flex;
   flex-direction: column;
+  width: 350px;
 }
 
 .titleCategories {
@@ -37,4 +40,18 @@
 
 .inputCategories {
   margin: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c0f0eb;
+  border: 1px solid white;
+  border-radius: 15px;
 }
