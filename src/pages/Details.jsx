@@ -8,9 +8,6 @@ import './Details.css';
 
 import Footer from '../components/Footer';
 
-import Image from '../images/shoppingcart.jpg';
-
-
 class Details extends React.Component {
   constructor() {
     super();
@@ -45,13 +42,13 @@ class Details extends React.Component {
 
         {loading ? 'Carregando...' : (
           <div className="flex">
-      
+
             <div className="product-image">
               <img src={ product.thumbnail } alt={ product.title } />
             </div>
 
             <div className="product-details">
-  
+
               <h1 data-testid="product-detail-name">{product.title}</h1>
               <p>{`R$ ${product.price}`}</p>
               <p>{product.warranty}</p>
@@ -66,19 +63,13 @@ class Details extends React.Component {
               >
                 Adicionar no carrinho
               </button>
-              
+
             </div>
-            
+
           </div>
         )}
 
         <ProductRating />
-
-        <Link to="/">Voltar</Link>
-
-        <Link to="/cart">
-          <img src={ Image } alt="carrinho de compras" />
-        </Link>
 
         <Footer />
 
