@@ -28,7 +28,7 @@ class Home extends React.Component {
         </div>
 
         <Footer />
-          
+
       </div> // passa o valor do listProduct ao products e joga no ProductList
     );
   }

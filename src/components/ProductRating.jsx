@@ -32,7 +32,7 @@ class ProductRating extends Component {
         loading: true,
       }, () => {
         const prevRatings = JSON.parse(localStorage.getItem('ratings'));
-        localStorage.setItem('ratings', JSON.stringify([...prevRatings, newRating]));
+        localStorage.setItem('ratings', JSON.stringify([newRating, ...prevRatings]));
         this.setState({
           loading: false,
         });
@@ -42,64 +42,79 @@ class ProductRating extends Component {
 
   render() {
     const ratings = ['1', '2', '3', '4', '5'];
-    const { loading } = this.state;
+    const emojis = ['😢', '😕', '😐', '🙂', '😍'];
+    const { loading, rating } = this.state;
     return (
-      <div>
-        <form>
+      <div className="flex">
+        <section className="new-review">
+          <h1>Avalie:</h1>
+          <form>
 
-          <label htmlFor="product-detail-email">
-            Email:
-            <input
-              onChange={ this.handleChange }
-              type="email"
-              name="email"
-              data-testid="product-detail-email"
-              id="product-detail-email"
-            />
-          </label>
+            <label htmlFor="product-detail-email">
+              <p>Email:</p>
+              <input
+                onChange={ this.handleChange }
+                type="email"
+                name="email"
+                data-testid="product-detail-email"
+                id="product-detail-email"
+                className="product-detail-email"
+              />
+            </label>
 
-          <section>
-            {ratings.map((rating) => (
-              <label
-                htmlFor={ `${rating}-rating` }
-                key={ rating }
-              >
-                <input
-                  onChange={ this.handleChange }
-                  data-testid={ `${rating}-rating` }
-                  type="radio"
-                  value={ rating }
-                  name="rating"
-                  id={ `${rating}-rating` }
-                />
-                {rating}
-              </label>
-            ))}
-          </section>
+            <section className="emojis">
+              {ratings.map((currRating, index) => (
+                <div
+                  key={ currRating }
+                >
+                  <input
+                    className="radio-button"
+                    onChange={ this.handleChange }
+                    data-testid={ `${currRating}-rating` }
+                    type="radio"
+                    value={ currRating }
+                    name="rating"
+                    id={ `${currRating}-rating` }
+                  />
+                  <label
+                    htmlFor={ `${currRating}-rating` }
+                  >
+                    <p
+                      className="label-radio"
+                    >
+                      {emojis[index]}
+                    </p>
+                  </label>
+                </div>
 
-          <label
-            htmlFor="review"
-          >
-            Avaliação:
-            <textarea
-              id="review"
-              name="review"
-              onChange={ this.handleChange }
-              data-testid="product-detail-evaluation"
-            />
-          </label>
+              ))}
+            </section>
 
-          <button
-            type="button"
-            data-testid="submit-review-btn"
-            onClick={ this.handleSubmit }
-          >
-            Enviar
-          </button>
+            <label
+              htmlFor="review"
+            >
+              <p>{`Minha avaliação é ${rating} porque:`}</p>
+              <textarea
+                id="review"
+                name="review"
+                onChange={ this.handleChange }
+                data-testid="product-detail-evaluation"
+              />
+            </label>
 
-        </form>
+            <button
+              className="button-details"
+              type="button"
+              data-testid="submit-review-btn"
+              onClick={ this.handleSubmit }
+            >
+              Enviar
+            </button>
 
-        <section>
+          </form>
+        </section>
+
+        <section className="previous-reviews">
           {loading
             ? <p>Loading</p>
             : <PrevList />}
