@@ -42,13 +42,13 @@ class Details extends React.Component {
 
         {loading ? 'Carregando...' : (
           <div className="flex">
-      
+
             <div className="product-image">
               <img src={ product.thumbnail } alt={ product.title } />
             </div>
 
             <div className="product-details">
-  
+
               <h1 data-testid="product-detail-name">{product.title}</h1>
               <p>{`R$ ${product.price}`}</p>
               <p>{product.warranty}</p>
