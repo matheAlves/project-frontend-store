@@ -8,6 +8,7 @@
   background-image: linear-gradient(#56dfd5, #17ccc9);
   border-bottom: 10px ridge #0db9b7;
   border-radius: 5%;
+  box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.42);
   display: flex;
   height: 400px;
   justify-content: center;
@@ -15,28 +16,26 @@
   padding: 30px;
   text-align: center;
   width: 450px;
-  box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.42);
 }
 
 .product-image img {
-  width: 290px;
-  margin-top: -100px;
   border-radius: 3%;
+  margin-top: -100px;
+  width: 290px;
 }
 
 .product-details {
   background-image: linear-gradient(#56dfd5, #29c2c0);
-  text-align: center;
   border-bottom: 10px ridge #0db9b7;
   border-radius: 1%;
+  box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.42);
   margin: 50px;
   padding: 30px;
+  text-align: center;
   width: 50%;
-  box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.42);
 }
 
 .button-details {
-  margin-top: 50px;
   align-self: center;
   background-color: rgb(70, 132, 247);
   border: 10px;
@@ -44,9 +43,10 @@
   color: #5fefcd;
   font-size: large;
   font-weight: 600;
+  height: 50px;
+  margin-top: 50px;
   transition: all 0.9s;
   width: 50%;
-  height: 50px;
 }
 
 .button-details:hover {
@@ -54,9 +54,9 @@
   border-radius: 5px;
   box-shadow: 0 6px 15px #0000ff61;
   color: rgb(70, 132, 247);
+  cursor: pointer;
   font-weight: 600;
   transition: all 0.9s;
-  cursor: pointer;
 }
 
 .button-details:active {
@@ -74,11 +74,11 @@ p {
 }
 
 .new-review {
-  border-left: 25px solid #0db9b7;
   background-image: linear-gradient(#56dfd5, #29c2c0);
+  border-left: 25px solid #0db9b7;
+  border-top: 5px solid #0db9b7;
   text-align: center;
   width: 50%;
-  border-top: 5px solid #0db9b7;
 }
 
 form {
@@ -86,9 +86,9 @@ form {
   flex-direction: column;
 }
 
-#product-detail-email {
-  width: 50%;
+.product-detail-email {
   height: 25px;
+  width: 50%;
 }
 
 textarea {
@@ -102,11 +102,10 @@ textarea {
 }
 
 .emojis {
-  margin-top: 20px;
-  text-align: center;
-  /* width: 500px; */
   display: flex;
   justify-content: space-around;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .label-radio {
@@ -115,25 +114,24 @@ textarea {
 }
 
 .label-radio:hover {
- cursor: pointer;
- filter: saturate(5);
+  cursor: pointer;
+  filter: saturate(5);
 }
 
 .previous-reviews {
+  border-right: 25px solid #0db9b7;
   text-align: center;
   width: 50%;
-  border-right: 25px solid #0db9b7;
 }
 
 .previous-reviews h1 {
-border-top: 5px solid #0db9b7;
-background-color: #56dfd5;
-margin: 0 0 50px 0;
-
+  background-color: #56dfd5;
+  border-top: 5px solid #0db9b7;
+  margin: 0 0 50px;
 }
 
 .review-card {
   border-bottom: 3px solid #56dfd5;
-  margin-left: 50px;
   border-radius: 10%;
+  margin-left: 50px;
 }

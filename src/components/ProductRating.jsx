@@ -41,7 +41,8 @@ class ProductRating extends Component {
   }
 
   render() {
-    const ratings = ['😢', '😕', '😐', '🙂', '😍'];
+    const ratings = ['1', '2', '3', '4', '5'];
+    const emojis = ['😢', '😕', '😐', '🙂', '😍'];
     const { loading, rating } = this.state;
     return (
       <div className="flex">
@@ -52,35 +53,36 @@ class ProductRating extends Component {
             <label htmlFor="product-detail-email">
               <p>Email:</p>
               <input
-                onChange={this.handleChange}
+                onChange={ this.handleChange }
                 type="email"
                 name="email"
                 data-testid="product-detail-email"
                 id="product-detail-email"
+                className="product-detail-email"
               />
             </label>
 
             <section className="emojis">
-              {ratings.map((rating) => (
+              {ratings.map((currRating, index) => (
                 <div
-                  key={rating}
+                  key={ currRating }
                 >
                   <input
                     className="radio-button"
-                    onChange={this.handleChange}
-                    data-testid={`${rating}-rating`}
+                    onChange={ this.handleChange }
+                    data-testid={ `${currRating}-rating` }
                     type="radio"
-                    value={rating}
+                    value={ currRating }
                     name="rating"
-                    id={`${rating}-rating`}
+                    id={ `${currRating}-rating` }
                   />
                   <label
-                    htmlFor={`${rating}-rating`}
+                    htmlFor={ `${currRating}-rating` }
                   >
                     <p
                       className="label-radio"
                     >
-                      {rating}
+                      {emojis[index]}
                     </p>
                   </label>
                 </div>
@@ -95,7 +97,7 @@ class ProductRating extends Component {
               <textarea
                 id="review"
                 name="review"
-                onChange={this.handleChange}
+                onChange={ this.handleChange }
                 data-testid="product-detail-evaluation"
               />
             </label>
@@ -104,7 +106,7 @@ class ProductRating extends Component {
               className="button-details"
               type="button"
               data-testid="submit-review-btn"
-              onClick={this.handleSubmit}
+              onClick={ this.handleSubmit }
             >
               Enviar
             </button>

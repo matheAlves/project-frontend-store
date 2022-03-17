@@ -39,7 +39,7 @@ class Details extends React.Component {
         {loading ? 'Carregando...' : (
           <div className="flex">
             <div className="product-image">
-              <img src={product.thumbnail} alt={product.title} />
+              <img src={ product.thumbnail } alt={ product.title } />
             </div>
 
             <div className="product-details">
@@ -51,8 +51,10 @@ class Details extends React.Component {
               <button
                 className="button-details"
                 type="button"
-                onClick={() => addToCart(product.thumbnail, product.title, product.price)}
-                data-testid="product-detail-add-to-cart">
+                onClick={ () => addToCart(product
+                  .thumbnail, product.title, product.price) }
+                data-testid="product-detail-add-to-cart"
+              >
                 Adicionar no carrinho
               </button>
             </div>

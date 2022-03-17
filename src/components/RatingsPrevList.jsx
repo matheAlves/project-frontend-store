@@ -10,7 +10,8 @@ class PrevList extends Component {
         {prevRatings.map((rating, index) => (
           <div
             className="review-card"
-            key={ index }>
+            key={ index }
+          >
             <h2>{rating.email}</h2>
             <h2>{rating.rating}</h2>
             <p>{rating.review}</p>
