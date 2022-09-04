@@ -16,7 +16,7 @@ class Header extends React.Component {
     return (
       <header className="header">
 
-        <Link to="/" className="linkvoltar">
+        <Link to="/project-frontend-store" className="linkvoltar">
           <img className="voltar" src={ ImageBack } alt="voltar" />
         </Link>
 
@@ -47,7 +47,7 @@ class Header extends React.Component {
           </h2>
         </div>
 
-        <Link className="linkCart" to="/cart" data-testid="shopping-cart-button">
+        <Link className="linkCart" to="/project-frontend-store/cart" data-testid="shopping-cart-button">
           <img className="image-cart" src={ Image } alt="carrinho de compras" />
         </Link>
 

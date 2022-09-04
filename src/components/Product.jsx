@@ -15,7 +15,7 @@ class Product extends React.Component {
         <div className="moreAdd">
           <Link
             data-testid="product-detail-link"
-            to={ `/${id}` }
+            to={ `/project-frontend-store/${id}` }
           >
             Saiba mais.
           </Link>

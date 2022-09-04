@@ -59,7 +59,7 @@ class Pages extends React.Component {
     return (
       <Switch>
 
-        <Route exact path="/">
+        <Route exact path="/project-frontend-store">
           <Home
             listProduct={ listProduct }
             loading={ loading }
@@ -69,7 +69,7 @@ class Pages extends React.Component {
           />
         </Route>
 
-        <Route exact path="/cart">
+        <Route exact path="/project-frontend-store/cart">
           <ShoppingCart
             cartItems={ cartItems }
           />
@@ -77,7 +77,7 @@ class Pages extends React.Component {
 
         <Route
           exact
-          path="/:id"
+          path="/project-frontend-store/:id"
           render={ (props) => (
             <Details { ...props } cartItems={ cartItems } addToCart={ this.addToCart } />
           ) }
